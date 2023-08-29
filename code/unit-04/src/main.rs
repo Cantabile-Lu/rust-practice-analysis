@@ -70,7 +70,35 @@ fn main() {
 */
 
 
-/* 8:  */
+/* 8:  
 fn main() {
-    assert!(0.1_f32+0.2_f32==0.3);
+    let v = 0.1_f64+ 0.2_f64;
+    println!("{v}"); // 0.30000000000000004
+
+    let v = 0.1_f32+ 0.2_f32;
+    println!("{v}"); // 0.3
+
+    let v = (0.1_f64 + 0.2_f64 - 0.3_f64).abs() < 0.000001;
+    println!("{v}"); // true
+}
+
+*/
+
+/* 9:  */
+fn main() {
+    let mut sum = 0;
+    for i in -3..=2 {
+        sum += i
+    }
+    println!("{sum}");
+
+    for c in 'a'..='z' {
+        println!("{}", c as i8 );
+    }
+
+    
+    // for c in 97..=122 {
+    //     let m = char::from(c);
+    //     println!("{}", m);
+    // }
 }
