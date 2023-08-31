@@ -236,7 +236,7 @@ fn explicitly_ret_unit() -> () {
  fn do_something() -> () {
     println!("I will return a");
  }
-  */
+
 
 use std::mem::size_of_val;
 fn main() {
@@ -245,3 +245,23 @@ fn main() {
 
     println!("Success!")
 }
+  */
+
+fn main() {
+    let v = {
+        let  x = 1;
+        x += 2
+    };
+    println!("{v}");
+    
+    // assert_eq!(v, 3);
+    // do_something();
+ }
+
+ fn do_something(){
+    let x = {
+        3+4
+    };
+
+    println!("{x}")
+ }
