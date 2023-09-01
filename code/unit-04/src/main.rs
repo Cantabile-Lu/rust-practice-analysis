@@ -247,21 +247,178 @@ fn main() {
 }
   */
 
-fn main() {
+  /* 17 
+  fn main() {
+   
+    /* 1:   */
     let v = {
-        let  x = 1;
-        x += 2
+        let mut x = 1;
+        x += 2;
+        x
     };
-    println!("{v}");
+    assert_eq!(v,3);
+    /* 2     */
+  
+    let v = {
+        let x = 1;
+        x + 2
+    };
+  
+    assert_eq!(v, 3);
+
+    let v = {
+        let mut x = 1;
+        x+= 2
+    };
+    assert_eq!(v, ());
+
+ }
+ */
+/* 18 
+ fn main() {
+    let v =  3;
+ 
+    assert!(v == 3);
+ }
+ */
+
+ /*     19 
+ fn main() {
+    let s = sum(1 , 2);
+    assert_eq!(s, ());
+    println!("Success")
+}
+
+fn sum(x: i32, y: i32) {
+    x + y;
+}
+*/
+
+/* 20
+fn main() {
+    // 不要修改下面两行代码!
+    let (x, y) = (1, 2);
+    let s = sum(x, y);
+
+    assert_eq!(s, 3);
+}
+
+fn sum(x:i32, y: i32) -> i32 {
+    x + y
+}
+
+// ******列子*********************************
+ fn main() {
+    let s = sum(1, 2);
+    assert_eq!(s, ());
+}
+
+fn sum(x:i32, y: i32) -> () {
+    x + y; // 语句默认返回（）既空的元组
+}
+ */
+
+ /* 21 
+ fn main() {
+    print();
+ }
+ 
+ // 使用另一个类型来替代 i32
+ fn print() {
+    println!("hello,world");
+ }
+ */
+
+ /* 22 
+ fn main() {
+    never_return();
+}
+
+fn never_return() -> ! {
+    // 实现这个函数，不要修改函数签名!
+    panic!("Stop");
     
-    // assert_eq!(v, 3);
-    // do_something();
- }
+}
+*/
 
- fn do_something(){
-    let x = {
-        3+4
+/* 23 
+fn main() {
+    println!("Success!");
+}
+
+fn get_option(tp: u8) -> Option<i32> {
+    match tp {
+        1 => {
+            // TODO
+        }
+        _ => {
+            // TODO
+        }
+    };
+    
+    // 这里与其返回一个 None，不如使用发散函数替代
+    never_return_fn()
+}
+
+// 使用三种方法实现以下发散函数
+// 1.
+fn never_return_fn() -> ! {
+    panic!("This function will never return");
+}
+
+// 2:
+use std::process::abort;
+fn never_return_fn() -> ! {
+    println!("aborting");
+    abort()
+}
+
+// 3: 
+use std::process::exit;
+fn never_return_fn() -> ! {
+    println!("aborting");
+    exit(0x0100)
+}
+
+// 4:
+fn never_return_fn() -> ! {
+    loop{
+        
+    }
+}
+*/
+
+/*  23 
+
+fn main() {
+    // 填空
+    let b = true;
+
+    let _v = match b {
+        true => 1,
+        // 发散函数也可以用于 `match` 表达式，用于替代任何类型的值
+        false => {
+            println!("Success!");
+            panic!("we have no value for `false`, but we can panic")
+        }
     };
 
-    println!("{x}")
- }
+    println!("Exercise Failed if printing out this line!");
+}
+*/
+
+
+fn main(){
+    let number = 12;
+    match number {
+        0 => {
+            println!("number is 0")
+        },
+        1..=10 => {
+            println!("number is between 1 an 10 ")
+        },
+        _n => {
+            println!("number is {}", _n)
+        }
+    }
+}
