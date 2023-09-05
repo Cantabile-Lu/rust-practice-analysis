@@ -79,6 +79,18 @@ fn main() {
 
 /* 6 
 fn main() {
+    let ref value = Some(String::from("Cantabile"));
+
+    match value {
+        Some(x) => println!(" {}", x),
+        _ => println!("No value"),
+    }
+
+    println!("{:?}",value);
+}
+
+
+fn main() {
     let c = '中';
 
     let r1 = &c;
@@ -97,11 +109,64 @@ fn get_addr(r: &char) -> String {
 }
 */
 
-fn main() {
-    let value = Some(42);
 
-    match value {
-        Some(ref x) => println!("Got a reference to {}", x),
-        None => println!("No value"),
-    }
+/* 7
+fn main() {
+    let mut s = String::from("Cantabile");
+    let r1 = &mut s;
+    println!("{}", r1);
+    let r2 = &mut s;
+    println!("{}", r2);
+}
+ */
+/* 8. 
+
+fn main() {
+    // 通过修改下面一行代码来修复错误
+    let   s = String::from("hello, ");
+
+    borrow_object(&mut s)
+}
+
+fn borrow_object(s: &mut String) {
+    println!("{s}")
+}
+
+*/
+/* 9 
+
+// 下面的代码没有任何错误
+fn main() {
+    let mut s = String::from("hello, ");
+
+    borrow_object(&s);
+    s.push_str("world");
+}
+
+fn borrow_object(s: &String) {
+    println!("{}",s.len())
+}
+*/
+
+/* 10.
+fn main() {
+    let mut s = String::from("hello, ");
+
+    let r1 = &mut s;
+    r1.push_str("world");
+    let r2 = &mut s;
+    r2.push_str("!");
+    
+    println!("{}",r2);
+}
+ */
+
+ /* 11 */
+fn main() {
+    let mut s = String::from("hello, ");
+    let r1 = &mut s;
+    let r2 = &mut s;
+    // 在下面增加一行代码人为制造编译错误：cannot borrow `s` as mutable more than once a...
+    println!("{}",r1);
+    // 你不能同时使用 r1 和 r2
 }
