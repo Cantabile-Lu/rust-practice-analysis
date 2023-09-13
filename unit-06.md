@@ -205,3 +205,31 @@ fn main() {
 }
 ```
 
+10. 🌟🌟🌟
+
+需要注意的是：
+
+- `r`是原始字符串，使用其目的是为了保持字符串的原义， 不需要转义。
+- 使用原始字符串中需要包含`""`则需要在两侧添加`#`，如字符串中包含`#`则需要更多的`#`。
+
+正确代码如下
+
+```rust
+fn main() {
+-   let raw_str = r"Escapes don't work here: \x3F \u{211D}";
++   let raw_str = "Escapes don't work here: \x3F \u{211D}";
+    assert_eq!(raw_str, "Escapes don't work here: ? ℝ");
+
+    let quotes = r#"And then I said: "There is no escape!""#;
+    println!("{}", quotes);
+
+    let  delimiter = r###"A string with "# in it. And even "##!"###;
+    println!("{}", delimiter);
+    
+-   let long_delimiter = __;
++   let long_delimiter = "Hello, \"##\"";
++   let long_delimiter = r###"Hello, "##""###;
+    assert_eq!(long_delimiter, "Hello, \"##\"")
+}
+```
+
