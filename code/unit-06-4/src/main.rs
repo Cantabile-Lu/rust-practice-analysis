@@ -8,8 +8,16 @@ fn main() {
     let t: (u8, u16, i64, &str, String) = (1u8, 2u16, 3i64, "hello", String::from(", world"));
 }
 */
-/* 2. */
+
+/* 2. 
 fn main() {
     let t = ("i", "am", "sunface");
-    assert_eq!(t.1, "sunface");
+    assert_eq!(t.2, "sunface");
+}*/
+
+/* 3. */
+fn main() {
+    let too_long_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
+    println!("too long tuple: {} ...{}", too_long_tuple);
+
 }

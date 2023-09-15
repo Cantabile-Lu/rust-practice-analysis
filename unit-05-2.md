@@ -15,6 +15,9 @@ fn main(){
     // 包含类型信息 
     let a = "Cantabile";
     println!("{:?}", a); // "Cantabile"
+    // 与 {:?} 类似，但会添加换行和缩进
+    let a = Some("Cantabile");
+	println!("{:#?}", a); // Some ( \n "Cantabile" \n )
     // 使用科学计数法特性格式化
     let a = 12_i32;
     println!("{:e}", a); // 1.2e1
