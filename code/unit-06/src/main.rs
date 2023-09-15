@@ -178,9 +178,20 @@ fn main() {
     let s  = 'a'; // 1
     // 标点符号
     let s  = '!'; // 1
+    let s  = ' y̆'; // 1
     let byte = s.len_utf8();
     println!("{:?}", byte)
 }
 */
 
 /* 12 */
+
+fn main() {
+    // 填空，打印出 "你好，世界" 中的每一个字符
+    for c in "你好，世界".chars() {
+        println!("{}", c)
+    }
+    let word = "你好，世界";
+    let chars = word.chars();
+    println!("{:?}", chars)
+}
