@@ -16,8 +16,22 @@ fn main() {
 }*/
 
 /* 3. */
-fn main() {
-    let too_long_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
-    println!("too long tuple: {} ...{}", too_long_tuple);
+// fn main() {
+//     let too_long_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+//     println!("too long tuple: {:?}", too_long_tuple);
+// }
 
+
+/* 4. */
+
+fn main() {
+    let tup = (1, 6.4, "hello");
+
+    // 填空
+    // let __ = tup;
+    let (x,z,y) = tup;
+
+    assert_eq!(x, 1);
+    assert_eq!(y, "hello");
+    assert_eq!(z, 6.4);
 }
