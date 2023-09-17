@@ -22,7 +22,7 @@ fn main() {
 // }
 
 
-/* 4. */
+/* 4. 
 
 fn main() {
     let tup = (1, 6.4, "hello");
@@ -34,4 +34,20 @@ fn main() {
     assert_eq!(x, 1);
     assert_eq!(y, "hello");
     assert_eq!(z, 6.4);
+}*/
+
+/* 5. */
+fn main() {
+    let (x, y, z);
+    // 填空
+    (y, z, x) = (1, 2, 3);
+    
+    assert_eq!(x, 3);
+    assert_eq!(y, 1);
+    // assert_eq!(z, 2);
+
+    // let (x,y,z);
+    // (x,y) = (1,2);
+    // (z) = 3;
+    // println!("{}, {}, {}", x,y, z)
 }
