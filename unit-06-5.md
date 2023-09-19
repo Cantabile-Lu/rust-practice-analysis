@@ -26,3 +26,28 @@ fn main() {
 } 
 ```
 
+2. 🌟
+
+需要注意的是：
+
+- 没有任何字段的结构体，也称之为`类单元结构体`，类似于单元类型即`()`。
+- 类单元结构体通常用于表示某些类型的存在而不包含任何实际数据。
+
+正确代码如下：
+
+```rust
+struct Unit;
+trait SomeTrait {
+    // ...定义一些行为
+}
+// 我们并不关心结构体中有什么数据( 字段 )，但我们关心它的行为。
+// 因此这里我们使用没有任何字段的单元结构体，然后为它实现一些行为
+impl SomeTrait for Unit {  }
+fn main() {
+    let u = Unit;
+    do_something_with_unit(u);
+} 
+- fn do_something_with_unit(u: ) {   }
++ fn do_something_with_unit(u: Unit) {   }
+```
+
