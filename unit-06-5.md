@@ -51,3 +51,36 @@ fn main() {
 + fn do_something_with_unit(u: Unit) {   }
 ```
 
+3. 
+
+需要注意的是：
+
+- 
+
+```rust
+// 元组解构
+let tup = (1,2,3);
+let (x,y,z) = tup;
+println!("{x}");
+// 结构体解构
+let Color(_,b,_) = Color(0, 127, 255);
+println!("{b}")
+```
+
+正确代码如下：
+
+```rust
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+fn main() {
+    let v = Color(0, 127, 255);
+    check_color(v);
+}   
+fn check_color(p: Color) {  
+    let Color(x,_,z) = p;
+    assert_eq!(x, 0);
+    assert_eq!(p.1, 127);
+    assert_eq!(z, 255);
+ }
+```
+
