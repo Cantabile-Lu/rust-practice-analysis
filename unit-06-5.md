@@ -186,3 +186,33 @@ fn set_email(u: User) -> User {
 }
 ```
 
+7. 🌟🌟
+
+需要注意的是：
+
+- 使用 `#[derive(Debug)]` 对结构体进行了标记，才能使用 `println!("{:?}", s);`。 
+- 需要让打印信息更直观，需要替换`{:?}`为`{:#?}`。
+
+正确代码如下：
+
+```rust
+-#[__]
++#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn main() {
+    let scale = 2;
+    let rect1 = Rectangle {
+        width: dbg!(30 * scale),
+        height: 50,
+    };
+
+    dbg!(&rect1);
+-   println!(__, rect1);
++   println!("{:#?}", rect1);
+}
+```
+
