@@ -216,3 +216,29 @@ fn main() {
 }
 ```
 
+8. 🌟🌟
+
+需要注意的是：
+
+- 一旦所有权被移动或者转移给另外一个变量，原始变量将不再有效，实列的一部分已经被转移了所有权，因此我们无法再使用它。
+
+正确代码如下：
+
+```rust
+#[derive(Debug)]
+struct File {
+    name: String,
+    data: String,
+}
+fn main() {
+    let f = File {
+        name: String::from("readme.md"),
+        data: "Rust By Practice".to_string()
+    };
+    let _name = f.name;
+    // 只能修改这一行
+-    println!("{}, {}, {:?}",f.name, f.data, f);
++    println!("{}", f.data);
+} 
+```
+

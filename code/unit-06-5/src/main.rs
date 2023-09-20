@@ -123,7 +123,7 @@ fn set_email(u: User) -> User {
     }
 }*/
 
-/* 7:  */
+/* 7:
 
 #[derive(Debug)]
 struct Rectangle {
@@ -141,4 +141,24 @@ fn main() {
     dbg!(&rect1); // 打印 debug 信息到标准错误输出 stderr
 
     println!("{:#?}", rect1); // 打印 debug 信息到标准输出 stdout
+}  */
+
+/* 8: */
+
+#[derive(Debug)]
+struct File {
+    name: String,
+    data: String,
 }
+fn main() {
+    let f = File {
+        name: String::from("readme.md"),
+        data: "Rust By Practice".to_string()
+    };
+
+    let _name = f.name;
+
+    // 只能修改这一行
+    println!("{}", f.data);
+} 
+
