@@ -64,4 +64,21 @@ fn check_color(p: Color) {
     assert_eq!(p.2, 255);
  }*/
 
- /* 4: */
+ /* 4: 
+ struct Person {
+    name: String,
+    age: u8,
+}
+fn main() {
+    let age = 18;
+    let mut p = Person {
+        name: String::from("sunface"),
+        age,
+    };
+    p.age = 30;
+    // 填空
+    p.name = String::from("sunfei");
+}*/
+
+/* 5: */
+

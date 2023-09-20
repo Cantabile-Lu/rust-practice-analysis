@@ -51,7 +51,7 @@ fn main() {
 + fn do_something_with_unit(u: Unit) {   }
 ```
 
-3. 
+3. 🌟🌟🌟
 
 需要注意的是：
 
@@ -93,5 +93,35 @@ fn check_color(p: Color) {
     assert_eq!(p.1, 127);
     assert_eq!(z, 255);
  }
+```
+
+4. 🌟
+
+需要注意的是：
+
+- 整个实例必须是可变的，不允许只将某个字段标记为可变。
+
+正确代码如下：
+
+```rust
+ struct Person {
+    name: String,
+    age: u8,
+}
+fn main() {
+    let age = 18;
+-    let p = Person {
+-        name: String::from("sunface"),
+-        age,
+-    };
+    
++    let mut p = Person {
++        name: String::from("sunface"),
++        age,
++    };     
+    p.age = 30;
+_   __ = String::from("sunfei");
++   p.name = String::from("sunfei");
+}
 ```
 
