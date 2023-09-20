@@ -80,7 +80,7 @@ fn main() {
     p.name = String::from("sunfei");
 }*/
 
-/* 5: */
+/* 5: 
 struct Person {
     name: String,
     age: u8,
@@ -95,5 +95,30 @@ fn build_person(name: String, age: u8) -> Person {
     Person {
         age,
         name
+    }
+}*/
+
+/* 6: */
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+fn main() {
+    let u1 = User {
+        email: String::from("someone@example.com"),
+        username: String::from("sunface"),
+        active: true,
+        sign_in_count: 1,
+    };
+
+    let u2 = set_email(u1);
+} 
+
+fn set_email(u: User) -> User {
+    User {
+        email: String::from("contact@im.dev"),
+        ..u
     }
 }

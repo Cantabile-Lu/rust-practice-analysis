@@ -151,3 +151,38 @@ fn build_person(name: String, age: u8) -> Person {
 }
 ```
 
+6. 🌟
+
+需要注意的是：
+
+- `..`结构体更新语法指定了剩余未显示设置值的字段全部获取。
+- 结构体更新语法必须在结构体的尾部使用。
+
+正确代码如下：
+
+```rust
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+fn main() {
+    let u1 = User {
+        email: String::from("someone@example.com"),
+        username: String::from("sunface"),
+        active: true,
+        sign_in_count: 1,
+    };
+
+    let u2 = set_email(u1);
+} 
+
+fn set_email(u: User) -> User {
+    User {
+        email: String::from("contact@im.dev"),
++       ..u
+    }
+}
+```
+
