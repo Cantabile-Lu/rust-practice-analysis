@@ -81,4 +81,19 @@ fn main() {
 }*/
 
 /* 5: */
+struct Person {
+    name: String,
+    age: u8,
+}
+fn main() {
+    
+    let result =  build_person(String::from("张三"), 18);
+    println!("{}, {}",result.name, result.age);
+} 
 
+fn build_person(name: String, age: u8) -> Person {
+    Person {
+        age,
+        name
+    }
+}

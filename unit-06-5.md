@@ -125,3 +125,29 @@ _   __ = String::from("sunfei");
 }
 ```
 
+5. 🌟
+
+需要注意的是：
+
+- 函数参数和结构体字段同名时，可以直接使用缩略的方式进行初始化。
+
+正确代码如下：
+
+```rust
+struct Person {
+    name: String,
+    age: u8,
+}
+fn main() {
+    let result =  build_person(String::from("张三"), 18);
+    println!("{}, {}",result.name, result.age);
+} 
+fn build_person(name: String, age: u8) -> Person {
+    Person {
+        age,
+-       __
++       name
+    }
+}
+```
+
