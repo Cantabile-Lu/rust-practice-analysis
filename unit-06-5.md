@@ -55,7 +55,9 @@ fn main() {
 
 需要注意的是：
 
-- 
+- 解构结构体需要使用结构体名称作为标记， 明确指定要解构的数据类型，避免潜在错误。
+- `_`在解构元组中作为忽略元素使用。
+- 每一个结构体有自己的类型，即使结构体中的字段有相同类型，列如：一个获取 `color`类型参数的函数不能接收`point`作为参数，因为它们是不同的类型，即便类型都为`i32`
 
 ```rust
 // 元组解构
@@ -63,8 +65,15 @@ let tup = (1,2,3);
 let (x,y,z) = tup;
 println!("{x}");
 // 结构体解构
-let Color(_,b,_) = Color(0, 127, 255);
+//1:
+let Color(_,b,_) = Color(1, 2, 3);
 println!("{b}")
+//2:
+let Person{name, age}  = Person {
+    name: String::from("Cantabile"),
+    age: 12
+};
+println!("name is  {}, age is {}", name, age)
 ```
 
 正确代码如下：
@@ -73,11 +82,13 @@ println!("{b}")
 struct Color(i32, i32, i32);
 struct Point(i32, i32, i32);
 fn main() {
-    let v = Color(0, 127, 255);
+-    let v = Point(__, __, __);
++    let v = Color(0, 127, 255);
     check_color(v);
 }   
 fn check_color(p: Color) {  
-    let Color(x,_,z) = p;
+-    let (x, _, _) = p;
++    let Color(x,_,z) = p;
     assert_eq!(x, 0);
     assert_eq!(p.1, 127);
     assert_eq!(z, 255);
